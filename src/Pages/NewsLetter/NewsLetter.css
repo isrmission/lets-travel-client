@@ -1,0 +1,12 @@
+.newsLBG{
+    background-image: url(https://i.ibb.co/Ky58BM7/image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #464646;
+    height: fit-content;
+}
+.paddingCustom{
+    padding: 12.5px 8px ;
+}

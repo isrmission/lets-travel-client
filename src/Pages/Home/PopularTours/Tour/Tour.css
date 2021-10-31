@@ -1,0 +1,15 @@
+.bottom-right {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.container2 {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+  }
+
+  .travel-img:hover{
+      opacity: 70%;
+  }
