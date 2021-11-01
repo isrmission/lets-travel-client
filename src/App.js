@@ -12,6 +12,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 import Packages from './Pages/Packages/Packages';
 import Footer from './Pages/Footer/Footer';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route path="/packages">
             <Packages></Packages>
+          </Route>
+          <Route path="**">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>
