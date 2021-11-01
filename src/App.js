@@ -19,7 +19,10 @@ function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
             <Home></Home>
           </Route>
           <PrivateRoute path="/details/:id">

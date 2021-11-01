@@ -8,7 +8,7 @@ const AllOrders = (props) => {
 
         if (warning) {
 
-            const url = `http://localhost:5000/pending/${id}`;
+            const url = `https://shrieking-mansion-79706.herokuapp.com/pending/${id}`;
             fetch((url), {
                 method: 'DELETE'
             })

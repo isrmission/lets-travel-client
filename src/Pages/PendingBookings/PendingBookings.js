@@ -7,16 +7,26 @@ const PendingBookings = () => {
     const { user } = UseAuth();
     const uEmail = user.email;
     const [requests, setRequests] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/pending/${uEmail}`)
+        fetch(`https://shrieking-mansion-79706.herokuapp.com/pending/${uEmail}`)
             .then(res => res.json())
             .then(data => {
                 setRequests(data)
                 // console.log(data)
-            });
-
+            })
+            .finally(() => setIsLoading(false));
     }, [])
+
+    if (isLoading) {
+        return (
+            <h1 className="text-8xl italic text-center my-60 font-black">
+                Loading...
+            </h1>
+        )
+    }
 
     return (
         <div>

@@ -19,7 +19,7 @@ const TourDetails = () => {
 
     useEffect(() => {
 
-        const url = `http://localhost:5000/services/${id}`
+        const url = `https://shrieking-mansion-79706.herokuapp.com/services/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -59,7 +59,7 @@ const TourDetails = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/pending', data)
+        axios.post('https://shrieking-mansion-79706.herokuapp.com/pending', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Request Pending. Please wait for Approval')

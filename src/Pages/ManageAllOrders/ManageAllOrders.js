@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/pending`)
+        fetch(`https://shrieking-mansion-79706.herokuapp.com/pending`)
             .then(res => res.json())
             .then(data => {
                 setRequests(data)

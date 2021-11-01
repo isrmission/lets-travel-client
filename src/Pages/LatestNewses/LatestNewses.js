@@ -5,7 +5,7 @@ import LatestNews from './LatestNews.js/LatestNews';
 const LatestNewses = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/latestNews')
+        fetch('https://shrieking-mansion-79706.herokuapp.com/latestNews')
             .then(res => res.json())
             .then(data => {
                 setServices(data)
