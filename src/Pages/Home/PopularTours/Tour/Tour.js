@@ -8,7 +8,7 @@ const Tour = (props) => {
         <div className="rounded-t-lg bg-white m-auto" style={{ width: '430px' }}>
             <div className="container2 border-b-4 border-green-500">
                 <Link to={`/details/${_id}`}>
-                    <img className="travel-img rounded-t-lg" src={img1} style={{ height: '250px', width: '430px' }} alt="" />
+                    <img className="rounded-t-lg" src={img1} style={{ height: '250px', width: '430px' }} alt="" />
                     <div class="bottom-right text-xl bg-green-500 px-5 pt-1 rounded-tl-lg"><span>$</span>{price}</div>
                 </Link>
 
