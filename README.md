@@ -3,7 +3,7 @@
 ## Live Site Link:
 * https://let-s-travel-as11.web.app/
 
-# About ""
+# About "Let's Travel"
 This is a tourism site where you can check and book our best travel deals. If you are passionate and travel hungry then don't hesitate to check our Travel Packages.
 
 # Top features of "Let's Travel"
