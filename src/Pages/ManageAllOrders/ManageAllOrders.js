@@ -34,9 +34,9 @@ const ManageAllOrders = () => {
     return (
         <div>
             <h1 className="text-center text-3xl font-bold py-5 bg-gray-200 my-10">
-                My Orders
+                Manage All Orders
             </h1>
-            {requests.length !== 0
+            {/* {requests.length !== 0
                 &&
                 <div>
                     <table class="table-auto border border-black text-center mx-auto">
@@ -49,7 +49,7 @@ const ManageAllOrders = () => {
                             </tr>
                         </thead>
                     </table>
-                </div>}
+                </div>} */}
 
             {requests.length === 0 ?
                 <div>

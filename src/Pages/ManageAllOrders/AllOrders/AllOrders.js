@@ -28,26 +28,33 @@ const AllOrders = (props) => {
     return (
         <div>
             <div>
-                <table class="table-auto border border-black text-center mx-auto">
-                    {/* <thead>
-                            <tr className="">
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Quantity</th>
-                                <th>Package Name</th>
-                            </tr>
-                        </thead> */}
-                    <tbody className=" text-center">
-                        <tr className="">
-                            <td className="px-10">{name}</td>
-                            <td className=" px-10">{email}</td>
-                            <td className="px-5">{quantity}</td>
-                            <td className=" px-10">{packageName}</td>
+                <div class="text-center py-2">
+                    <div>
+                        <ul className="flex justify-center">
+                            <li className=' border-double border-4 mr-5 border-green-600	' style={{ width: '50%' }}>
+                                <div className=" flex justify-around">
+                                    <div>
+                                        <p className="font-bold">Name</p>
+                                        <p>{name}</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Email</p>
+                                        <p>{email}</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Package</p>
+                                        <p>{packageName}</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Quantity</p>
+                                        <p>{quantity}</p>
+                                    </div>
+                                </div>
+                            </li>
                             <button onClick={() => handleDelete(_id)} class="p-1 pl-5 pr-4 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Delete</button>
-
-                        </tr>
-                    </tbody>
-                </table>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -33,20 +33,7 @@ const PendingBookings = () => {
             <h1 className="text-center text-3xl font-bold py-5 bg-gray-200 my-10">
                 My Orders
             </h1>
-            {requests.length !== 0
-                &&
-                <div>
-                    <table class="table-auto border border-black text-center mx-auto">
-                        <thead>
-                            <tr>
-                                <th className="pl-20 pr-20" >Name</th>
-                                <th className="pl-20 pr-20" >Email</th>
-                                <th className="px-20" >Quantity</th>
-                                <th className="px-8" >Package Name</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>}
+
 
             {requests.length === 0 ?
                 <div>

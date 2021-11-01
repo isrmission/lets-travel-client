@@ -4,6 +4,8 @@ import './PopularTours.css';
 
 const PopularTours = () => {
     const [services, setServices] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         fetch('https://shrieking-mansion-79706.herokuapp.com/services')
             .then(res => res.json())
@@ -11,7 +13,18 @@ const PopularTours = () => {
                 setServices(data)
                 console.log(data)
             })
+            .finally(() => setIsLoading(false));
+
     }, [])
+
+    if (isLoading) {
+        return (
+            <h1 className="text-8xl italic text-center my-60 font-black">
+                Loading. Please Wait...
+            </h1>
+        )
+    }
+
     return (
         <div className="travelBg pt-10">
             <div className="text-center py-5 bg-gray-50 bg-opacity-50">

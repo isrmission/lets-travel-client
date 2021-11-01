@@ -1,13 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Pbooking = (props) => {
     const { _id, name, email, quantity, packageName } = props.request;
-
+    const { status, setStatus } = useState(true);
     const handleDelete = id => {
         const warning = window.confirm("Are you sure to delete your order?");
 
         if (warning) {
-
             const url = `https://shrieking-mansion-79706.herokuapp.com/pending/${id}`;
             fetch((url), {
                 method: 'DELETE'
@@ -21,35 +20,54 @@ const Pbooking = (props) => {
                     }
                 })
         }
-
-
-
     }
 
+    const handleconfirm = () => {
+        setStatus(false)
+    };
 
     return (
         <div>
             <div>
-                <table class="table-auto border border-black text-center mx-auto">
-                    {/* <thead>
-                            <tr className="">
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Quantity</th>
-                                <th>Package Name</th>
-                            </tr>
-                        </thead> */}
-                    <tbody className=" text-center">
-                        <tr className="">
-                            <td className="px-10">{name}</td>
-                            <td className=" px-10">{email}</td>
-                            <td className="px-5">{quantity}</td>
-                            <td className=" px-10">{packageName}</td>
-                            <button onClick={() => handleDelete(_id)} class="p-1 pl-5 pr-4 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Delete</button>
+                <div class="text-center py-2">
+                    <div>
+                        <ul className="flex justify-center">
+                            <li className=' border-double border-4 mr-5 border-green-600' style={{ width: '50%' }}>
+                                <div className=" flex justify-around">
+                                    <div>
+                                        <p className="font-bold">Name</p>
+                                        <p>{name}</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Email</p>
+                                        <p>{email}</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Package</p>
+                                        <p>{packageName}</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Quantity</p>
+                                        <p>{quantity}</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Status</p>
+                                        {status === true ? <p className="text-red-400">
+                                            Pending
+                                        </p> :
+                                            <p>
+                                                Confirmed
+                                            </p>}
+                                    </div>
+                                </div>
+                            </li>
+                            {status === true && <button onClick={() => handleconfirm} class="p-1 mr-4 pl-5 pr-4 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Confirm</button>}
+                            {/* <button onClick={() => handleCancel} class="p-1 pl-5 pr-4 mr-3 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Cancel Order</button> */}
 
-                        </tr>
-                    </tbody>
-                </table>
+                            <button onClick={() => handleDelete(_id)} class="p-1 pl-5 pr-4 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Delete</button>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     );
