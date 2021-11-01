@@ -152,22 +152,22 @@ const TourDetails = () => {
                         </div>
                     </div>
                     <div className="mt-20 mx-10">
-                        <div className="text-center bg-green-400 px-16 pb-10 pt-4 rounded-lg hover:bg-gray-800 hover:text-gray-400">
+                        <div className="text-center bg-green-400 px-16 pb-10 pt-4 rounded-lg hover:bg-green-500 ">
                             <p className='italic font-mono text-xl font-black'>
                                 Find your dream tour today!
                             </p>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <input type="text" onClick={handleName} required className="border rounded py-1 border-gray-600 text-center my-2" placeholder={user.email ? user.displayName : 'Your Name'} {...register("name")} /><br />
-                                <input type="email" onClick={handleEmail} required className="border rounded py-1 border-gray-600 text-center my-2" placeholder={user.email ? user.email : "Your Email"} {...register("email")} /><br />
-                                <input type="text" required className="border rounded py-1 border-gray-600 text-center my-2" placeholder="Phone Number"{...register("phone")} /><br />
-                                <input type="date" required className="border rounded py-1 border-gray-600 text-center my-2" {...register("date")} /><br />
-                                <input type="number" className="border rounded py-1 border-gray-600 text-center my-2" placeholder="Quantity" {...register("quantity")} /><br />
-                                <input type="name" onClick={handlePackage} required placeholder={service.name} readOnly {...register("packageName")} className="border rounded py-1 border-gray-600 text-center my-2" /><br />
+                                <input type="text" onClick={handleName} className="border rounded py-1 border-gray-600 text-center my-2" placeholder={user.email ? user.displayName : 'Your Name'} {...register("name", { required: true })} /><br />
+                                <input type="email" onClick={handleEmail} className="border rounded py-1 border-gray-600 text-center my-2" placeholder={user.email ? user.email : "Your Email"} {...register("email", { required: true })} /><br />
+                                <input type="text" className="border rounded py-1 border-gray-600 text-center my-2" placeholder="Phone Number"{...register("phone", { required: true })} /><br />
+                                <input type="date" className="border rounded py-1 border-gray-600 text-center my-2" {...register("date", { required: true })} /><br />
+                                <input type="number" className="border rounded py-1 border-gray-600 text-center my-2" placeholder="Quantity" min="1" {...register("quantity", { required: true }, { min: 1, max: 10 })} /><br />
+                                <input type="name" onClick={handlePackage} placeholder={service.name} readOnly {...register("packageName", { required: true })} className="border rounded py-1 border-gray-600 text-center my-2" /><br />
                                 {/* <span className="text-white font-bold text-xl">
                                     TOTAL: <span>$</span><span>{user.email ? ttotal : `${service.price}`}</span>
                                 </span> */}
                                 <div className="flex justify-center mt-1">
-                                    <input type='submit' className="p-2 mt-3 text-xl pl-10 pr-9 bg-green-500 border-2 border-green-500 text-gray-100 text-sm rounded-lg hover:bg-white hover:text-green-500 focus:border-4 focus:border-green-300 font-bold" value="BOOK NOW" />
+                                    <input type='submit' className="p-2 mt-3 text-xl pl-10 pr-9 bg-green-700 border-2 border-green-500 text-gray-100 text-sm rounded-lg hover:bg-white hover:text-green-500 focus:border-4 focus:border-green-300 font-bold" value="BOOK NOW" />
                                 </div>
                             </form>
 
