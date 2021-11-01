@@ -4,6 +4,8 @@ import AllOrders from './AllOrders/AllOrders';
 
 const ManageAllOrders = () => {
     const [requests, setRequests] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
 
 
     useEffect(() => {
@@ -12,9 +14,21 @@ const ManageAllOrders = () => {
             .then(data => {
                 setRequests(data)
                 // console.log(data)
-            });
+            })
+            .finally(() => setIsLoading(false));
 
-    }, [])
+
+    }, []);
+
+
+    if (isLoading) {
+        return (
+            <h1 className="text-8xl italic text-center my-60 font-black">
+                Loading...
+            </h1>
+        )
+    }
+
 
 
     return (
