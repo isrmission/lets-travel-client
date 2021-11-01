@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const Pbooking = (props) => {
     const { _id, name, email, quantity, packageName } = props.request;
-    const { status, setStatus } = useState(true);
+    const { status, setStatus } = useState();
     const handleDelete = id => {
         const warning = window.confirm("Are you sure to delete your order?");
 
@@ -50,18 +50,17 @@ const Pbooking = (props) => {
                                         <p className="font-bold">Quantity</p>
                                         <p>{quantity}</p>
                                     </div>
-                                    <div>
-                                        <p className="font-bold">Status</p>
-                                        {status === true ? <p className="text-red-400">
-                                            Pending
-                                        </p> :
-                                            <p>
-                                                Confirmed
-                                            </p>}
-                                    </div>
+                                    {
+                                        <div>
+                                            <p className="font-bold">Status</p>
+                                            <p className="text-red-400">
+                                                Pending
+                                            </p>
+                                        </div>
+                                    }
                                 </div>
                             </li>
-                            {status === true && <button onClick={() => handleconfirm} class="p-1 mr-4 pl-5 pr-4 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Confirm</button>}
+                            {/* {<button onClick={() => handleconfirm} class="p-1 mr-4 pl-5 pr-4 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Confirm</button>} */}
                             {/* <button onClick={() => handleCancel} class="p-1 pl-5 pr-4 mr-3 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Cancel Order</button> */}
 
                             <button onClick={() => handleDelete(_id)} class="p-1 pl-5 pr-4 bg-transparent border-2 border-green-500 text-green-500 text-lg rounded-lg hover:bg-green-500 hover:text-gray-100 focus:border-4 focus:border-green-300">Delete</button>
